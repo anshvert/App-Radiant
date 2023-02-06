@@ -2,6 +2,7 @@ import { Controller, Get, Post, Put, Req, Delete, Res, Body,UsePipes, Validation
 import { UserService } from './users.service'
 import { UserDTO } from './dto/users.dto';
 
+
 @Controller('users')
 export class UserController{
     constructor(private readonly userservice: UserService) {}
@@ -13,8 +14,9 @@ export class UserController{
         res.status(200).send({result:response})
     }
 
+    // pipe not working
     @Post('add')
-    @UsePipes(new ValidationPipe({ whitelist:true }))
+    @UsePipes(new ValidationPipe({ forbidNonWhitelisted:true }))
     async adduser(@Req() req, @Res() res, @Body() body:UserDTO){
 
         const response = await this.userservice.adduser(body)
