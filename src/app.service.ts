@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 export class AppService {
 
   gethomepage(): string {
-    return 'Home Page';
+    return 'Welcome to Backend Service';
   }
   
 }
