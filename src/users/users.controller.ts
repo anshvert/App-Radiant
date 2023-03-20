@@ -8,29 +8,36 @@ export class UserController{
     constructor(private readonly userservice: UserService) {}
 
     @Get()
-    async getusers(@Res() res){
+    async getUsers(@Res() res){
 
         const response = await this.userservice.getusers()
         res.status(200).send({result:response})
     }
 
+    @Post('login')
+    async userLogin(@Req() req, @Res() res){
+
+        const response = await this.userservice.loginUser(req.body)
+        res.status(200).send(response)
+    }
+
     @Post('add')
     @UsePipes(new ValidationPipe({ forbidNonWhitelisted:true }))
-    async adduser(@Req() req, @Res() res, @Body() body:UserDTO){
+    async addUser(@Req() req, @Res() res, @Body() body:UserDTO){
 
         const response = await this.userservice.adduser(body)
         res.status(200).send(response)
     }
 
     @Put('update')
-    async updateuser(@Req() req, @Res() res, @Body() body:UserDTO){
+    async updateUser(@Req() req, @Res() res, @Body() body:UserDTO){
         
         const response = await this.userservice.updateuser(req,body)
         res.status(200).send(response)
     }
 
     @Delete('delete')
-    async deleteuser(@Req() req, @Res() res){
+    async deleteUser(@Req() req, @Res() res){
 
         const response = await this.userservice.deleteuser(req)
         res.status(200).send(response)

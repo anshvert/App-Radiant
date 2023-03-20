@@ -9,37 +9,76 @@ export class UserService {
     constructor(@InjectModel(User.name) private readonly userModel:Model<UserDocument>) {}
 
     async getusers(){
-
         const all_users = await this.userModel.find({})
         return all_users
     }
 
-    async userexists(email){
-        
+    async userExists(email){
         const email_exists = await this.userModel.find({
             email:email
         })
-        return email_exists
+        if (email_exists.length){
+            return true
+        }
+        return false        
     }   
     
-    async adduser(user_body){
+    async passwordMatch(data){
+        const user = await this.userModel.find({
+            email:data.email,
+            password:data.password
+        })
+        if (user.length){
+            return true
+        }
+        return false    
+    }
+
+    async loginUser(body){
         
-        const user_exists = await this.userexists(user_body.email)
+        const user_exists = await this.userExists(body.email)
+        const password_match = await this.passwordMatch(body)
+        
+        if (!user_exists){
+            return {
+                success:false,
+                message:"This email doesn't exist. Try creating a new user."
+            }
+        }
+        if (!password_match){
+            return {
+                success:false,
+                message:"Password didn't match. Check again."
+            }
+        }
+        return {
+            success:true
+        }
+    }
+
+    async adduser(user_body){
+        const user_exists = await this.userExists(user_body.email)
             
-        if (!user_exists.length){
+        if (!user_exists){
 
             const user = new this.userModel(user_body)
             user.save()
 
-            return 'User added'
+            return {
+                success:true,
+                message:"User Added Successfully"
+            }
         }
-        return 'User already exists with this email'
+        return {
+            success:false,
+            message:"User already exists. Try a different email"
+        }
     }
     
     async updateuser(user_req,user_body){
-        const user_exists = await this.userexists(user_req.query.email)
+        const user_exists = await this.userExists(user_req.query.email)
 
-        if (user_exists.length){
+        if (user_exists){
             
             const result = await this.userModel.updateOne({email:user_req.query.email},{...user_body})
 
@@ -53,9 +92,9 @@ export class UserService {
     }
 
     async deleteuser(user_req){
-        const user_exists = await this.userexists(user_req.query.email)
+        const user_exists = await this.userExists(user_req.query.email)
 
-        if (user_exists.length){
+        if (user_exists){
 
             const result = await this.userModel.deleteOne({email:user_req.query.email})
 
