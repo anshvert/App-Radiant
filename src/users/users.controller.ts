@@ -14,13 +14,11 @@ export class UserController{
         res.status(200).send({result:response})
     }
 
-    // pipe not working
     @Post('add')
     @UsePipes(new ValidationPipe({ forbidNonWhitelisted:true }))
     async adduser(@Req() req, @Res() res, @Body() body:UserDTO){
 
         const response = await this.userservice.adduser(body)
-
         res.status(200).send(response)
     }
 
@@ -28,7 +26,6 @@ export class UserController{
     async updateuser(@Req() req, @Res() res, @Body() body:UserDTO){
         
         const response = await this.userservice.updateuser(req,body)
-
         res.status(200).send(response)
     }
 
@@ -36,7 +33,6 @@ export class UserController{
     async deleteuser(@Req() req, @Res() res){
 
         const response = await this.userservice.deleteuser(req)
-
         res.status(200).send(response)
 
     }

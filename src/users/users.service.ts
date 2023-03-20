@@ -37,7 +37,6 @@ export class UserService {
     }
     
     async updateuser(user_req,user_body){
-
         const user_exists = await this.userexists(user_req.query.email)
 
         if (user_exists.length){
@@ -54,7 +53,6 @@ export class UserService {
     }
 
     async deleteuser(user_req){
-
         const user_exists = await this.userexists(user_req.query.email)
 
         if (user_exists.length){
@@ -64,7 +62,6 @@ export class UserService {
             if (result.acknowledged){
                 return 'User deleted'
             }
-
             return 'User deletion failed'
         }
         return 'User does not exists'

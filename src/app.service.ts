@@ -6,5 +6,4 @@ export class AppService {
   gethomepage(): string {
     return 'Welcome to Backend Service';
   }
-  
 }
