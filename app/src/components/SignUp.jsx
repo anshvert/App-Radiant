@@ -1,7 +1,7 @@
 import '../css/login.css';
 import { useState } from 'react';
 
-function Login() {
+function SignUp(props) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -31,7 +31,13 @@ function Login() {
       })
     })
     const data = await response.json()
-    console.log(data)
+
+    if (data.success){
+      props.handleLogin();
+    }
+    else{
+      console.log(data.message)
+    }
   };
 
   return (
@@ -76,4 +82,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignUp;
