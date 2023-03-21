@@ -1,6 +1,5 @@
 import '../css/login.css';
 import { useState } from 'react';
-import {Home} from './Components'
 
 function Login(props) {
   const [email, setEmail] = useState('');
@@ -27,14 +26,11 @@ function Login(props) {
     const data = await response.json()
     
     if (data.success){
-        // redirect to home page
-        console.log('logined')
-        
+        props.handleLogin();
     }
     else{
       console.log(data.message)
     }
-    props.handleLogin(true);
   };
 
   return (
