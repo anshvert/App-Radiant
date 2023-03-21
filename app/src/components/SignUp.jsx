@@ -70,7 +70,7 @@ function Login() {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">SignUp</button>
       </form>
     </div>
   );

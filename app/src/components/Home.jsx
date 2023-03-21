@@ -1,6 +1,10 @@
+import Navbar from "./Navbar"
+
 function Home(){
     return (
-        <h1>Home</h1>
+        <div>
+            <div>I am on Home page</div>
+        </div>
     )
 }
 

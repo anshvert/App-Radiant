@@ -1,7 +1,8 @@
 import '../css/login.css';
 import { useState } from 'react';
+import {Home} from './Components'
 
-function Login() {
+function Login(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -15,7 +16,6 @@ function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(`Email: ${email}, Password: ${password}`);
     const response = await fetch(`http://localhost:5000/users/login`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -25,7 +25,16 @@ function Login() {
       })
     })
     const data = await response.json()
-    console.log(data)
+    
+    if (data.success){
+        // redirect to home page
+        console.log('logined')
+        
+    }
+    else{
+      console.log(data.message)
+    }
+    props.handleLogin(true);
   };
 
   return (

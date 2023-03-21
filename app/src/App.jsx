@@ -2,40 +2,38 @@ import './App.css';
 import {
   Home,
   Login,
-  SignUp
+  SignUp,
+  Apps
 } from './components/Components';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
+import Navbar from './components/Navbar';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
     <Router>
-
-      <nav>
-        <div className="nav-center">
-          <div className="nav-header">
-            <h2>App Radiant</h2>
-          </div>
-          <ul className="links">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/signup">SignUp</Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
+      <Navbar isLoggedIn={isLoggedIn} />
       <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/login' element={<Login />}></Route>
-        <Route path='/signup' element={<SignUp/>}></Route>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/login"
+          element={<Login handleLogin={handleLogin} />}
+        />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/apps" element={<Apps />} />
       </Routes>
-
     </Router>
-  )
+  );
 }
+
 export default App;
