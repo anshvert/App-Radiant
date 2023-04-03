@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import '../css/games.css';
 
 function Games(){
 
@@ -17,12 +18,15 @@ function Games(){
     }, []);
     
     return (
-        <div>
+        <div className="games-container">
           {data.map((game) => (
-            <div key={game.name}>
-              <h2>{game.name}</h2>
-              <p>{game.description}</p>
-              <a href={game.url}>Play now!</a>
+            <div key={game.name} className="game">
+              <img src={game.image} alt={game.name} className="game-image" />
+              <div className="game-info">
+                <h2 className="game-name">{game.name}</h2>
+                <p className="game-description">{game.description}</p>
+                <a href={game.url} className="game-button">Play now!</a>
+              </div>
             </div>
           ))}
         </div>
