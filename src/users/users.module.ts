@@ -7,14 +7,11 @@ import { APP_PIPE } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 
 @Module({
-
     imports: [MongooseModule.forFeature([{name:User.name,schema:UserSchema}])],
     controllers: [UserController],
-    providers: [UserService,
-            {
+    providers: [UserService,{
             provide: APP_PIPE,
-            useClass: ValidationPipe,
-          },]
+            useClass: ValidationPipe}]
 })
 export class UsersModule {}
 

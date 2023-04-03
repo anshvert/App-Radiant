@@ -9,5 +9,4 @@ export class AppController {
   gethome(): string {
     return this.appService.gethomepage();
   }
-
 }

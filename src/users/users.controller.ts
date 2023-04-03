@@ -2,7 +2,6 @@ import { Controller, Get, Post, Put, Req, Delete, Res, Body,UsePipes, Validation
 import { UserService } from './users.service'
 import { UserDTO } from './dto/users.dto';
 
-
 @Controller('users')
 export class UserController{
     constructor(private readonly userservice: UserService) {}
@@ -13,14 +12,12 @@ export class UserController{
         const response = await this.userservice.getusers()
         res.status(200).send({result:response})
     }
-
     @Post('login')
     async userLogin(@Req() req, @Res() res){
 
         const response = await this.userservice.loginUser(req.body)
         res.status(200).send(response)
     }
-
     @Post('add')
     @UsePipes(new ValidationPipe({ forbidNonWhitelisted:true }))
     async addUser(@Req() req, @Res() res, @Body() body:UserDTO){
@@ -28,14 +25,12 @@ export class UserController{
         const response = await this.userservice.adduser(body)
         res.status(200).send(response)
     }
-
     @Put('update')
     async updateUser(@Req() req, @Res() res, @Body() body:UserDTO){
         
         const response = await this.userservice.updateuser(req,body)
         res.status(200).send(response)
     }
-
     @Delete('delete')
     async deleteUser(@Req() req, @Res() res){
 
