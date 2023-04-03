@@ -13,5 +13,8 @@ export class Game {
 
     @Prop()
     url:string
+
+    @Prop()
+    image:string
 }
 export const GamesSchema = SchemaFactory.createForClass(Game)
