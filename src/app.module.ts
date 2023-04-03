@@ -5,7 +5,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 
 @Module({
-  imports: [UsersModule,MongooseModule.forRoot('mongodb://127.0.0.1:27017/mongodb_tut')],
+  imports: [UsersModule,MongooseModule.forRoot('mongodb+srv://ansh:Ansh2222@radiant.vfzdf6u.mongodb.net/RadiantDB?retryWrites=true&w=majority')],
   controllers: [AppController],
   providers: [AppService],
 })
