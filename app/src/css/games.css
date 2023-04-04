@@ -1,51 +1,63 @@
 .games-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-  
-  .game {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 20px;
-    padding-left: 50px;
-    text-align: center;
-    justify-content: center;
-  }
-  
-  .game-image {
-    width: 100%;
-    height: auto;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .game-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .game-name {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  .game-description {
-    margin: 10px 0;
-  }
-  
-  .game-button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1%;
+}
+
+.game {
+  width: 45%;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  margin: auto;
+}
+
+/* .game:hover {
+  transform: scale(1.05);
+} */
+
+.game-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-right: 2rem;
+}
+
+.game-info {
+  flex: 1 1 50%;
+}
+
+.game-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+}
+
+.game-description {
+  text-align: center;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.game-button {
+  background-color: #0070f3;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.game-button:hover {
+  background-color: #f4511e;
+}
