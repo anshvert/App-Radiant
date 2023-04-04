@@ -7,7 +7,7 @@ function Games(){
 
     useEffect(() => {
         const getAllGames = async () => {
-        const response = await fetch('http://localhost:5000/games', {
+        const response = await fetch('https://appradiantnestjs.onrender.com/games', {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });
