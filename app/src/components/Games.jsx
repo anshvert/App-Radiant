@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import '../css/games.css';
+const config = require(`../config/${process.env.NODE_ENV}_params`)
 
 function Games(){
 
     const [data, setData] = useState([]);
-
+    
     useEffect(() => {
         const getAllGames = async () => {
-        const response = await fetch('https://zany-gold-bat-cap.cyclic.app/games', {
+        const response = await fetch(`${config.urls.baseUrl}games`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });

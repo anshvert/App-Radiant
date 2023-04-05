@@ -1,5 +1,6 @@
 import '../css/login.css';
 import { useState } from 'react';
+const config = require(`../config/${process.env.NODE_ENV}_params`)
 
 function SignUp(props) {
   const [name, setName] = useState('');
@@ -20,8 +21,7 @@ function SignUp(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(`Name: ${name}, Email: ${email}, Password: ${password}`);
-    const response = await fetch(`https://appradiantnestjs.onrender.com/users/add`, {
+    const response = await fetch(`${config.urls.baseUrl}users/add`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
