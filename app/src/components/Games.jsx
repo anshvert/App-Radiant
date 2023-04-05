@@ -7,7 +7,7 @@ function Games(){
 
     useEffect(() => {
         const getAllGames = async () => {
-        const response = await fetch('https://appradiantnestjs.onrender.com/games', {
+        const response = await fetch('https://zany-gold-bat-cap.cyclic.app/games', {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         });
