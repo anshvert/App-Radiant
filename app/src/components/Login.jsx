@@ -15,7 +15,7 @@ function Login(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch(`https://appradiantnestjs.onrender.com/users/login`, {
+    const response = await fetch(`https://zany-gold-bat-cap.cyclic.app/users/login`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
