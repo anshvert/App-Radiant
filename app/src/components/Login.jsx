@@ -1,5 +1,6 @@
 import '../css/login.css';
 import { useState } from 'react';
+const config = require(`../config/${process.env.NODE_ENV}_params`)
 
 function Login(props) {
   const [email, setEmail] = useState('');
@@ -15,7 +16,7 @@ function Login(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch(`https://zany-gold-bat-cap.cyclic.app/users/login`, {
+    const response = await fetch(`${config.urls.baseUrl}users/login`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
