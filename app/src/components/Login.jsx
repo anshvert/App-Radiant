@@ -25,6 +25,7 @@ function Login(props) {
       })
     })
     const data = await response.json()
+    console.log(data)
     
     if (data.success){
         props.handleLogin();
@@ -33,36 +34,37 @@ function Login(props) {
       console.log(data.message)
     }
   };
-
   return (
-    <div>
-      <form id="login-form" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email:</label>
+    <div className="login-box">
+      <h2>Login</h2>
+      <form autoComplete='off'>
+        <div className="user-box">
           <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={handleEmailChange}
-            required
-          />
+          type="text"
+          id="email"
+          name="email"
+          value={email}
+          onChange={handleEmailChange}/>
+          <label>Email</label>
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
+        <div className="user-box">
           <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            onChange={handlePasswordChange}
-            required
-          />
+          type="password"
+          id="password"
+          name="password"
+          value={password}
+          onChange={handlePasswordChange}/>
+          <label>Password</label>
         </div>
-        <button type="submit">Login</button>
+          <a href="/#" onClick={handleSubmit}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Login
+          </a>
       </form>
-    </div>
+  </div>
   );
 }
-
 export default Login;

@@ -39,44 +39,44 @@ function SignUp(props) {
       console.log(data.message)
     }
   };
-
   return (
-    <div>
-      <form id="login-form" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
+    <div className='login-box'>
+      <form autoComplete='off'>
+      <h2>SignUp</h2>
+        <div className='user-box'>
           <input
             type="text"
             id="name"
             name="name"
             value={name}
-            onChange={handleNameChange}
-            required
-          />
+            onChange={handleNameChange}/>
+            <label>Name</label>
         </div>
-        <div>
-          <label htmlFor="email">Email:</label>
+        <div className='user-box'>
           <input
-            type="email"
+            type="text"
             id="email"
             name="email"
             value={email}
-            onChange={handleEmailChange}
-            required
-          />
+            onChange={handleEmailChange}/>
+            <label>Email</label>
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
+        <div className='user-box'>
           <input
             type="password"
             id="password"
             name="password"
             value={password}
-            onChange={handlePasswordChange}
-            required
-          />
+            onChange={handlePasswordChange}/>
+            <label>Password</label>
         </div>
-        <button type="submit">SignUp</button>
+        <a href="/#" onClick={handleSubmit}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            SignUp
+          </a>
       </form>
     </div>
   );
