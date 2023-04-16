@@ -26,7 +26,7 @@ function Games(){
               <div className="game-info">
                 <h2 className="game-name">{game.name}</h2>
                 <p className="game-description">{game.description}</p>
-                <a href={game.url} className="game-button">Play now!</a>
+                <a href={game.url} className="game-button" target="_blank" rel="noopener noreferrer">Play now!</a>
               </div>
             </div>
           ))}
