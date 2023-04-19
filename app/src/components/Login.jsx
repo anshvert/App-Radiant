@@ -28,10 +28,11 @@ function Login(props) {
     console.log(data)
     
     if (data.success){
-        props.handleLogin();
+        const user = data.data[0]
+        props.handleLogin(user);
     }
     else{
-      console.log(data.message)
+      console.log(data.data.message)
     }
   };
   return (

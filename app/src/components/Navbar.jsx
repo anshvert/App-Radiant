@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-function Navbar({ isLoggedIn }) {
+function Navbar({ isLoggedIn,user }) {
     return (
         <nav>
         <div className="nav-center">
@@ -18,6 +18,9 @@ function Navbar({ isLoggedIn }) {
             </li>
             <li>
               <Link to='/logout'>Logout</Link>
+            </li>
+            <li>
+              <Link to='/profile'>{user?.name}</Link>
             </li>
           </ul> :
           <ul className='links'>
@@ -36,6 +39,4 @@ function Navbar({ isLoggedIn }) {
       </nav>
     )
 }
-
-
 export default Navbar;

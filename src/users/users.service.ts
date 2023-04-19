@@ -18,9 +18,9 @@ export class UserService {
             email:email
         })
         if (email_exists.length){
-            return true
+            return {success:true}
         }
-        return false        
+        return{success:false}        
     }   
     
     async passwordMatch(data){
@@ -29,31 +29,44 @@ export class UserService {
             password:data.password
         })
         if (user.length){
-            return true
+            return {
+                success:true,
+                data:user
+            }
         }
-        return false    
+        return {success:false}
     }
 
-    async loginUser(body){
-        
+    async validUser(body){
         const user_exists = await this.userExists(body.email)
         const password_match = await this.passwordMatch(body)
+
+        if (!user_exists.success){
+            return {
+                success:false,
+                message:"This email doesn't exist. Try creating a new user."             
+            }
+        }
+        if (!password_match.success){
+            return {
+                success:false,
+                message:"Password didn't match. Check again."               
+            }
+        }
+        return {success:true,data:password_match.data}
+    }
+    async loginUser(body){
         
-        if (!user_exists){
+        const user = await this.validUser(body)
+        if (!user.success){
             return {
-                success:false,
-                message:"This email doesn't exist. Try creating a new user."
+                success:user.success,
+                data:{
+                    message:user.message
+                }
             }
         }
-        if (!password_match){
-            return {
-                success:false,
-                message:"Password didn't match. Check again."
-            }
-        }
-        return {
-            success:true
-        }
+        return user
     }
 
     async adduser(user_body){
