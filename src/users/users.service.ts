@@ -8,7 +8,7 @@ export class UserService {
 
     constructor(@InjectModel(User.name) private readonly userModel:Model<UserDocument>) {}
 
-    async getusers(){
+    async getUsers(){
         const all_users = await this.userModel.find({})
         return all_users
     }
@@ -74,7 +74,7 @@ export class UserService {
         if (!user_exists){
 
             const user = new this.userModel(user_body)
-            user.save()
+            await user.save()
 
             return {
                 success:true,
@@ -87,7 +87,7 @@ export class UserService {
         }
     }
     
-    async updateuser(user_req,user_body){
+    async updateUser(user_req,user_body){
         const user_exists = await this.userExists(user_req.query.email)
 
         if (user_exists){
@@ -103,7 +103,7 @@ export class UserService {
         return 'User does not exists'
     }
 
-    async deleteuser(user_req){
+    async deleteUser(user_req){
         const user_exists = await this.userExists(user_req.query.email)
 
         if (user_exists){

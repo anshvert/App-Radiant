@@ -1,6 +1,7 @@
 import '../css/login.css';
-import { useState } from 'react';
+import {useState} from 'react';
 const config = require(`../config/${process.env.NODE_ENV}_params`)
+const appConstants = require('../constants/appConstants')
 
 function Login(props) {
   const [email, setEmail] = useState('');
@@ -25,10 +26,11 @@ function Login(props) {
       })
     })
     const data = await response.json()
-    console.log(data)
-    
     if (data.success){
         const user = data.data[0]
+        if (!Object.prototype.hasOwnProperty.call(user,'icon')){
+          user.icon = appConstants.DEFAULT_USER_ICON
+        }
         props.handleLogin(user);
     }
     else{

@@ -9,7 +9,7 @@ export class UserController{
     @Get()
     async getUsers(@Res() res){
 
-        const response = await this.userservice.getusers()
+        const response = await this.userservice.getUsers()
         res.status(200).send({result:response})
     }
     @Post('login')
@@ -28,13 +28,13 @@ export class UserController{
     @Put('update')
     async updateUser(@Req() req, @Res() res, @Body() body:UserDTO){
         
-        const response = await this.userservice.updateuser(req,body)
+        const response = await this.userservice.updateUser(req,body)
         res.status(200).send(response)
     }
     @Delete('delete')
     async deleteUser(@Req() req, @Res() res){
 
-        const response = await this.userservice.deleteuser(req)
+        const response = await this.userservice.deleteUser(req)
         res.status(200).send(response)
 
     }

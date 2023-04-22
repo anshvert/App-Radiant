@@ -1,5 +1,5 @@
 import './App.css';
-import { Home, Login, SignUp, Logout, Apps, NavbarBS } from './components/Components';
+import { Home, Login, SignUp, Logout, Apps, Navbar } from './components/Components';
 import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div>
-      <NavbarBS isLoggedIn={isLoggedIn} user={user} />
+      <Navbar isLoggedIn={isLoggedIn} user={user} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login handleLogin={handleLogin} />}/>

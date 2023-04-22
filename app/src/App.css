@@ -1,10 +1,9 @@
-html
-{
+html {
   background-image: url("images/background_blur_rain.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height:100%;
-  background-color: #e6e6e6;
+  background-color: #1a0e0e;
   background-position: center;
 }
 
@@ -16,85 +15,6 @@ body {
   line-height: 1.5;
   height: 100%;
   width: 100%;
+  background-image: url("images/background_blur_rain.jpg");
 }
 
-nav {
-  background-color: rgb(61, 59, 58);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.nav-center {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-}
-
-.nav-header h2 {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: bold;
-  color: rgb(111, 196, 177);
-}
-
-.links {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  margin-left: auto;
-}
-
-.links li {
-  margin: 0 1rem;
-}
-
-.links li a {
-  color: rgb(111, 196, 177);
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding: 0.5rem 1rem;
-}
-
-.links li a:hover {
-  color: #4CAF50;
-}
-
-.user-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-left: auto;
-  font-size: 1.25rem;
-  border-radius: 50%;
-  background-color: #ccc;
-  color: #fff;
-  cursor: pointer;
-}
-
-#icon {
-  float:right; 
-}
-.routes-container {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.routes-container h2 {
-  margin-top: 0;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #333;
-}

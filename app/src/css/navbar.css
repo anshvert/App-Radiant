@@ -1,0 +1,21 @@
+.user-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.0rem;
+    height: 2.0rem;
+    font-size: 1.25rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
+.user-name {
+    margin: 0;
+    padding: 0;
+    color: cyan;
+}

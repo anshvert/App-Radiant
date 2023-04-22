@@ -1,0 +1,1 @@
+export const DEFAULT_USER_ICON = require('../images/default_user_icon.jpg')

@@ -7,7 +7,6 @@ export class GamesController {
 
     @Get()
     async getGames(@Res() res){
-
         const response = await this.gamesService.getGames()
         res.status(200).send({result:response})
     }
