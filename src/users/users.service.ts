@@ -56,7 +56,6 @@ export class UserService {
         return {success:true,data:password_match.data}
     }
     async loginUser(body){
-        
         const user = await this.validUser(body)
         if (!user.success){
             return {

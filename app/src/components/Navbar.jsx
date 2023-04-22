@@ -19,9 +19,7 @@ function Navbar({ isLoggedIn,user }) {
             <li>
               <Link to='/logout'>Logout</Link>
             </li>
-            <li>
-              <Link to='/profile'>{user?.name}</Link>
-            </li>
+            <div className="user-icon">{user?.name[0]}</div>
           </ul> :
           <ul className='links'>
           <li>

@@ -27,6 +27,8 @@ nav {
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
@@ -45,6 +47,7 @@ nav {
   margin: 0;
   padding: 0;
   align-items: center;
+  margin-left: auto;
 }
 
 .links li {
@@ -64,6 +67,23 @@ nav {
   color: #4CAF50;
 }
 
+.user-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: auto;
+  font-size: 1.25rem;
+  border-radius: 50%;
+  background-color: #ccc;
+  color: #fff;
+  cursor: pointer;
+}
+
+#icon {
+  float:right; 
+}
 .routes-container {
   max-width: 1000px;
   margin: 2rem auto;
