@@ -18,17 +18,14 @@ function NavBar({ isLoggedIn, user }) {
                                 <Nav.Link as={NavLink} to="/apps">
                                     Apps
                                 </Nav.Link>
-                                <Nav.Link as={NavLink} to="/logout">
-                                    Logout
-                                </Nav.Link>
                             </>
                         </Nav>
                         <Nav className="ml-auto">
                             <>
                                 <img src={user?.icon} alt="User Icon" className="user-icon" />
                                 <NavDropdown title={user?.name}>
-                                    <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">LogOut</NavDropdown.Item>
+                                    <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+                                    <NavDropdown.Item href="/logout">LogOut</NavDropdown.Item>
                                 </NavDropdown>
                             </>
                         </Nav>

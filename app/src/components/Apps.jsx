@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { Games } from './Components'
 
 function Apps() {
@@ -9,5 +8,4 @@ function Apps() {
       </div>
     );
 }
-
 export default Apps
