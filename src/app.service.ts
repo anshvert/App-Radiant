@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
 
-  gethomepage(): string {
-    return 'Welcome to Backend Service';
+  getHomePage(): string {
+    return 'Welcome to App Radiant Backend Service';
   }
 }

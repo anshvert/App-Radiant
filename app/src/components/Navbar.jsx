@@ -3,7 +3,8 @@ import '../css/navbar.css'
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
-function NavBar({ isLoggedIn, user }) {
+function NavBar(props) {
+    const {isLoggedIn,user} = props
     return (
         <Navbar bg="dark" variant="dark">
             <Container>

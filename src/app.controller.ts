@@ -7,6 +7,6 @@ export class AppController {
 
   @Get()
   getHome(): string {
-    return this.appService.gethomepage();
+    return this.appService.getHomePage();
   }
 }

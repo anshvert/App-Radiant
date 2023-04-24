@@ -22,7 +22,6 @@ function App() {
     setIsLoggedIn(true);
     setUser(userData)
     navigate('/')
-    console.log(userData)
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('userData',JSON.stringify(userData))
   };
@@ -41,7 +40,7 @@ function App() {
         <Route path="/logout" element={<Logout handleLogout={handleLogout} />}/>
         <Route path="/signup" element={<SignUp handleLogin={handleLogin} />} />
         <Route path="/apps" element={<Apps />} />
-        <Route path="/profile" element={<Profile/>} />
+        <Route path="/profile" element={<Profile user={user}/>} />
       </Routes>
     </>
   );
