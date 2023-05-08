@@ -13,6 +13,12 @@ export class User {
 
   @Prop()
   password: string;
+
+  @Prop()
+  profileImage:string;
+
+  @Prop()
+  createdAt:Date;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

@@ -1,20 +1,4 @@
-html {
-  background-image: url("images/background_blur_rain.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height:100%;
-  background-color: #1a0e0e;
-  background-position: center;
-}
-
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  height: 100%;
-  width: 100%;
-  background-image: url("images/background_blur_rain.jpg");
+    background-color: #171515 !important;
+    color: #fff;
 }
-

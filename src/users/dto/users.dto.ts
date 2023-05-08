@@ -1,17 +1,21 @@
-import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
-
+import { IsEmail, IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { Prop } from "@nestjs/mongoose";
 
 export class UserDTO  {
 
+    @IsOptional()
     @IsString()
-    @IsNotEmpty()
-    name: string;
+    name?: string;
 
     @IsEmail()
     @IsNotEmpty()
     email: string;
 
+    @IsOptional()
     @IsString()
-    @IsNotEmpty()
-    password: string;
+    password?: string;
+
+    @IsOptional()
+    @IsString()
+    profileImage?: string;
 }

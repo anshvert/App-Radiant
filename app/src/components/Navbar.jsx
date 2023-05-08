@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/navbar.css'
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+const appConstants = require('../constants/appConstants')
 
 function NavBar(props) {
     const {isLoggedIn,user} = props
@@ -23,7 +24,7 @@ function NavBar(props) {
                         </Nav>
                         <Nav className="ml-auto">
                             <>
-                                <img src={user?.icon} alt="User Icon" className="user-icon" />
+                                <img src={appConstants.DEFAULT_USER_ICON} alt="XD" className="user-icon" />
                                 <NavDropdown title={user?.name}>
                                     <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
                                     <NavDropdown.Item href="/logout">LogOut</NavDropdown.Item>

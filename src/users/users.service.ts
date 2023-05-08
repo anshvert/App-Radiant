@@ -86,22 +86,25 @@ export class UserService {
             message:"User already exists. Try a different email"
         }
     }
-    
-    async updateUser(user_req,user_body){
-        const user_exists = await this.userExists(user_req.query.email)
 
-        if (user_exists){
-            
-            const result = await this.userModel.updateOne({email:user_req.query.email},{...user_body})
-
-            if (result.acknowledged){
-                return 'User updated'
-            }
-            return 'User updated failed'
-
+    async updateUser(body) {
+        const result = await this.userModel.updateOne(
+          { email: body.email },
+          { $set: { ...body, createdAt: new Date() } },
+          { upsert: true }
+        );
+        if (result.acknowledged) {
+            return {
+                success: true,
+                message: "User updated",
+            };
         }
-        return 'User does not exists'
+        return {
+            success: false,
+            message: "User update failed",
+        };
     }
+
 
     async deleteUser(user_req){
         const user_exists = await this.userExists(user_req.query.email)

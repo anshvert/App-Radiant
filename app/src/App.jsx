@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const loggedInStatus = localStorage.getItem('isLoggedIn');
     const userData = localStorage.getItem('userData');
-    
+
     if (loggedInStatus === 'true') {
       setIsLoggedIn(true);
       setUser(JSON.parse(userData))
@@ -30,7 +30,6 @@ function App() {
     setIsLoggedIn(false);
     localStorage.removeItem('isLoggedIn')
   };
-
   return (
     <>
       <Navbar isLoggedIn={isLoggedIn} user={user} />
@@ -39,7 +38,7 @@ function App() {
         <Route path="/login" element={<Login handleLogin={handleLogin} />}/>
         <Route path="/logout" element={<Logout handleLogout={handleLogout} />}/>
         <Route path="/signup" element={<SignUp handleLogin={handleLogin} />} />
-        <Route path="/apps" element={<Apps />} />
+        <Route path="/apps/*" element={<Apps />} />
         <Route path="/profile" element={<Profile user={user}/>} />
       </Routes>
     </>

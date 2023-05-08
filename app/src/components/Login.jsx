@@ -40,8 +40,14 @@ function Login(props) {
     const data = await response.json()
     if (data.success){
         const user = data.data[0]
-        if (!Object.prototype.hasOwnProperty.call(user,'icon')){
-          user.icon = appConstants.DEFAULT_USER_ICON
+        if (!Object.prototype.hasOwnProperty.call(user,'profileImage')){
+          const profImage = localStorage.getItem("user-prof")
+          if (profImage){
+            user.icon = profImage
+          }
+          else {
+            user.icon = appConstants.DEFAULT_USER_ICON
+          }
         }
         props.handleLogin(user);
     }

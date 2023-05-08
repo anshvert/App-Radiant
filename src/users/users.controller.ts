@@ -28,7 +28,7 @@ export class UserController{
     @Put('update')
     async updateUser(@Req() req, @Res() res, @Body() body:UserDTO){
         
-        const response = await this.userservice.updateUser(req,body)
+        const response = await this.userservice.updateUser(body)
         res.status(200).send(response)
     }
     @Delete('delete')
