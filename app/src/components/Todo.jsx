@@ -1,11 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import '../css/todo.css';
+import axios from 'axios';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { IconButton } from '@mui/material';
+const config = require(`../config/${process.env.NODE_ENV}_params`)
 
 function Todo() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
+
+  useEffect( ()=> {
+    const userTodoList = async () => {
+      const userData = JSON.parse(localStorage.getItem('userData'));
+      const todoListConfig = {
+        url:`${config.urls.baseUrl}todo/get`,
+        method:"POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data:JSON.stringify({
+          email:userData?.email
+        })
+      }
+      const todoList = await axios(todoListConfig)
+      setTasks(todoList.data)
+    }
+    userTodoList().then().catch()
+
+  },[])
 
   const handleAddTask = () => {
     if (newTask !== '') {

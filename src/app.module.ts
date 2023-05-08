@@ -4,9 +4,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { GamesModule } from './games/games.module';
+import { TodoModule} from "./todo/todo.module";
 
 @Module({
-  imports: [UsersModule,MongooseModule.forRoot('mongodb+srv://ansh:Ansh2222@radiant.vfzdf6u.mongodb.net/RadiantDB?retryWrites=true&w=majority'), GamesModule],
+  imports: [UsersModule,MongooseModule.forRoot('mongodb+srv://ansh:Ansh2222@radiant.vfzdf6u.mongodb.net/RadiantDB?retryWrites=true&w=majority'), GamesModule,TodoModule],
   controllers: [AppController],
   providers: [AppService],
 })

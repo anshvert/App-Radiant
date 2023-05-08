@@ -70,12 +70,9 @@ export class UserService {
 
     async adduser(user_body){
         const user_exists = await this.userExists(user_body.email)
-            
         if (!user_exists){
-
             const user = new this.userModel(user_body)
             await user.save()
-
             return {
                 success:true,
                 message:"User Added Successfully"
