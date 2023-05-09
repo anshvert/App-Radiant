@@ -9,7 +9,7 @@ export class TodoDTO {
   email:string
 
   @IsOptional()
-  desciption?:string
+  description?:string
 
   @IsBoolean()
   completed:boolean

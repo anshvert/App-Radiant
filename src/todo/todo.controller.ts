@@ -23,4 +23,9 @@ export class TodoController {
     const response = await this.todoService.addtTodo(body)
     return res.status(200).send(response)
   }
+  @Post('del')
+  async delTodo(@Req() req,@Res() res,@Body() body){
+    const response = await this.todoService.deleteTodo(body)
+    return res.status(200).send(response)
+  }
 }

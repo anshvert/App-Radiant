@@ -11,21 +11,19 @@ export class TodoService {
   async getTodoList(){
     return this.todoModel.find({})
   }
-
   async getUserTodoList(email) {
     return this.todoModel.find({
       email:email
-    })
+    }).sort({createdAt:-1})
   }
   async addtTodo(todoBody){
-    const date = new Date()
-    const todo = new this.todoModel({
-      title:todoBody.title,
-      description:todoBody.description,
-      email:todoBody.email,
-      createdAt:date,
-      completed:todoBody.completed
-    })
+    const todo = new this.todoModel(todoBody)
     return await todo.save();
+  }
+  async deleteTodo(todoBody){
+    return this.todoModel.deleteOne({
+      email: todoBody.email,
+      title: todoBody.title,
+    }).exec();
   }
 }

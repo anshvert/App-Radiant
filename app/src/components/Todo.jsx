@@ -8,10 +8,12 @@ const config = require(`../config/${process.env.NODE_ENV}_params`)
 function Todo() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
+  const [user,setUser] = useState(null)
 
   useEffect( ()=> {
     const userTodoList = async () => {
       const userData = JSON.parse(localStorage.getItem('userData'));
+      setUser(userData)
       const todoListConfig = {
         url:`${config.urls.baseUrl}todo/get`,
         method:"POST",
@@ -26,17 +28,42 @@ function Todo() {
       setTasks(todoList.data)
     }
     userTodoList().then().catch()
-
   },[])
 
-  const handleAddTask = () => {
+  const handleAddTask = async () => {
     if (newTask !== '') {
+      const todoAddConfig = {
+        url:`${config.urls.baseUrl}todo/add`,
+        method:"POST",
+        headers:{
+          "Content-Type": "application/json"
+        },
+        data:JSON.stringify({
+          title:newTask,
+          email:user.email,
+          description:'',
+          completed:false
+        })
+      }
+      await axios(todoAddConfig)
       setTasks([newTask,...tasks]);
       setNewTask('');
     }
   };
 
-  const handleDeleteTask = (index) => {
+  const handleDeleteTask = async (index,task) => {
+    const todoDeleteConfig = {
+      url:`${config.urls.baseUrl}todo/del`,
+      method:"POST",
+      headers:{
+        "Content-Type": "application/json"
+      },
+      data:JSON.stringify({
+        title:task,
+        email:user.email
+      })
+    }
+    await axios(todoDeleteConfig)
     setTasks(tasks.filter((task, i) => i !== index));
   };
 
@@ -48,7 +75,7 @@ function Todo() {
           {tasks.map((task, index) => (
             <li key={index}>
               {task}
-              <IconButton onClick={() => handleDeleteTask(index)}>
+              <IconButton onClick={() => handleDeleteTask(index,task)}>
                 <DeleteIcon color="error"/>
               </IconButton>
             </li>

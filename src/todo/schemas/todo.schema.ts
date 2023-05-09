@@ -5,19 +5,19 @@ export type TodoDocument = HydratedDocument<Todo>
 
 @Schema({collection:"todo"})
 export class Todo {
-  @Prop()
+  @Prop({required:true})
   title:string
 
   @Prop()
   description:string
 
-  @Prop()
+  @Prop({required:true})
   email:string
 
-  @Prop()
-  createdtAt:Date
+  @Prop({ default: Date.now })
+  createdAt: Date;
 
-  @Prop()
+  @Prop({required:true,default:false})
   completed:boolean
 }
 
