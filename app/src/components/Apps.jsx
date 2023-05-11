@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react';
-import { Games } from './Components'
+import { Games,Todo } from './Components'
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
-function Apps() {
-
+function Apps(props) {
+  const {user} = props
     return (
-      <div>
-        <Games />
-      </div>
+      <>
+        <Routes>
+          <Route path="/todo" element={<Todo user={user}/>}/>
+          <Route path="/games" element={<Games/>}/>
+        </Routes>
+      </>
     );
 }
-
 export default Apps

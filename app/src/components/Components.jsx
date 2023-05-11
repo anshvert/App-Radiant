@@ -4,4 +4,6 @@ export {default as SignUp} from './SignUp';
 export {default as Apps} from './Apps';
 export {default as Navbar} from './Navbar';
 export {default as Logout} from './Logout';
-export {default as Games} from './Games'
+export {default as Games} from './Games';
+export {default as Profile} from './Profile'
+export {default as Todo} from './Todo'

@@ -1,41 +1,56 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/navbar.css'
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+const appConstants = require('../constants/appConstants')
 
-function Navbar({ isLoggedIn }) {
+function NavBar(props) {
+    const {isLoggedIn,user} = props
     return (
-        <nav>
-        <div className="nav-center">
-          <div className="nav-header">
-            <h2>App Radiant</h2>
-          </div>
-          {isLoggedIn ? 
-          <ul className='links'>
-            <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li>
-              <Link to='/apps'>Apps</Link>
-            </li>
-            <li>
-              <Link to='/logout'>Logout</Link>
-            </li>
-          </ul> :
-          <ul className='links'>
-          <li>
-            <Link to='/'>Home</Link>
-          </li>
-          <li>
-            <Link to='/login'>Login</Link>
-          </li>
-          <li>
-            <Link to='/signup'>Signup</Link>
-          </li>
-        </ul> 
-          }
-        </div>
-      </nav>
-    )
+        <Navbar bg="dark" variant="dark">
+            <Container>
+                <Navbar.Brand>App Radiant</Navbar.Brand>
+                {isLoggedIn ? (
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="me-auto">
+                            <>
+                                <Nav.Link as={NavLink} to="/">
+                                    Home
+                                </Nav.Link>
+                                <Nav.Link as={NavLink} to="/apps">
+                                    Apps
+                                </Nav.Link>
+                            </>
+                        </Nav>
+                        <Nav className="ml-auto">
+                            <>
+                                <img src={appConstants.DEFAULT_USER_ICON} alt="XD" className="user-icon" />
+                                <NavDropdown title={user?.name}>
+                                    <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+                                    <NavDropdown.Item href="/logout">LogOut</NavDropdown.Item>
+                                </NavDropdown>
+                            </>
+                        </Nav>
+                    </Navbar.Collapse>
+                ) : (
+                    <Nav className="me-auto">
+                        <>
+                            <Nav.Link as={NavLink} to="/">
+                                Home
+                            </Nav.Link>
+                            <Nav.Link as={NavLink} to="/login">
+                                Login
+                            </Nav.Link>
+                            <Nav.Link as={NavLink} to="/signup">
+                                Signup
+                            </Nav.Link>
+                        </>
+                    </Nav>
+                )}
+
+            </Container>
+        </Navbar>
+    );
 }
 
-
-export default Navbar;
+export default NavBar;

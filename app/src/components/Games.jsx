@@ -15,7 +15,7 @@ function Games(){
         const data = await response.json();
         setData(data.result);
         };
-        getAllGames();
+        getAllGames().then(r => {}).catch();
     }, []);
     
     return (

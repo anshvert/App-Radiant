@@ -36,7 +36,7 @@ function SignUp(props) {
       props.handleLogin();
     }
     else{
-      console.log(data.message)
+      console.log('bad signup')
     }
   };
   return (

@@ -1,0 +1,44 @@
+.Todo {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    margin: 50px auto;
+    background-color: #1f1f1f;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.Todo-left {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.Todo-right {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.Todo-right input {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #363636;
+    color: #fff;
+}
+
+.Todo-right button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.Todo-right button:hover {
+    background-color: #3e8e41;
+}

@@ -1,9 +1,10 @@
+import '../css/home.css'
+import {Todo} from "./Components";
 function Home(){
     return (
-        <div>
-            <h1>Nothing To Show Here...</h1>
-        </div>
+        <>
+            <h1>Home</h1>
+        </>
     )
 }
-
 export default Home

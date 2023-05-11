@@ -8,7 +8,7 @@ export class UserService {
 
     constructor(@InjectModel(User.name) private readonly userModel:Model<UserDocument>) {}
 
-    async getusers(){
+    async getUsers(){
         const all_users = await this.userModel.find({})
         return all_users
     }
@@ -18,9 +18,9 @@ export class UserService {
             email:email
         })
         if (email_exists.length){
-            return true
+            return {success:true}
         }
-        return false        
+        return{success:false}        
     }   
     
     async passwordMatch(data){
@@ -29,41 +29,50 @@ export class UserService {
             password:data.password
         })
         if (user.length){
-            return true
+            return {
+                success:true,
+                data:user
+            }
         }
-        return false    
+        return {success:false}
     }
 
-    async loginUser(body){
-        
+    async validUser(body){
         const user_exists = await this.userExists(body.email)
         const password_match = await this.passwordMatch(body)
-        
-        if (!user_exists){
+
+        if (!user_exists.success){
             return {
                 success:false,
-                message:"This email doesn't exist. Try creating a new user."
+                message:"This email doesn't exist. Try creating a new user."             
             }
         }
-        if (!password_match){
+        if (!password_match.success){
             return {
                 success:false,
-                message:"Password didn't match. Check again."
+                message:"Password didn't match. Check again."               
             }
         }
-        return {
-            success:true
+        return {success:true,data:password_match.data}
+    }
+    async loginUser(body){
+        const user = await this.validUser(body)
+        if (!user.success){
+            return {
+                success:user.success,
+                data:{
+                    message:user.message
+                }
+            }
         }
+        return user
     }
 
     async adduser(user_body){
         const user_exists = await this.userExists(user_body.email)
-            
         if (!user_exists){
-
             const user = new this.userModel(user_body)
-            user.save()
-
+            await user.save()
             return {
                 success:true,
                 message:"User Added Successfully"
@@ -74,24 +83,27 @@ export class UserService {
             message:"User already exists. Try a different email"
         }
     }
-    
-    async updateuser(user_req,user_body){
-        const user_exists = await this.userExists(user_req.query.email)
 
-        if (user_exists){
-            
-            const result = await this.userModel.updateOne({email:user_req.query.email},{...user_body})
-
-            if (result.acknowledged){
-                return 'User updated'
-            }
-            return 'User updated failed'
-
+    async updateUser(body) {
+        const result = await this.userModel.updateOne(
+          { email: body.email },
+          { $set: { ...body, createdAt: new Date() } },
+          { upsert: true }
+        );
+        if (result.acknowledged) {
+            return {
+                success: true,
+                message: "User updated",
+            };
         }
-        return 'User does not exists'
+        return {
+            success: false,
+            message: "User update failed",
+        };
     }
 
-    async deleteuser(user_req){
+
+    async deleteUser(user_req){
         const user_exists = await this.userExists(user_req.query.email)
 
         if (user_exists){
