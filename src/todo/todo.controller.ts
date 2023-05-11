@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Req, Delete, Res, Body,UsePipes, ValidationPipe } from '@nestjs/common';
+import { Controller, Get, Post, Req, Res, Body } from '@nestjs/common';
 import { TodoService } from "./todo.service";
 import { TodoDTO } from "./dto/todo.dto";
 
