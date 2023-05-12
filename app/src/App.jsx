@@ -1,7 +1,8 @@
 import './App.css';
-import { Home, Login, SignUp, Logout, Apps, Navbar,Profile } from './components/Components';
+import { Home, Login, SignUp, Logout, Apps, Navbar,Profile,PageNF } from './components/Components';
 import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import Todo from "./components/Todo";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -38,8 +39,10 @@ function App() {
         <Route path="/login" element={<Login handleLogin={handleLogin} />}/>
         <Route path="/logout" element={<Logout handleLogout={handleLogout} />}/>
         <Route path="/signup" element={<SignUp handleLogin={handleLogin} />} />
-        <Route path="/apps/*" element={<Apps/>} />
+        <Route path="/apps" element={<Apps/>}/>
+        <Route path="/apps/todo" element={<Todo user={user}/>}/>
         <Route path="/profile" element={<Profile user={user}/>} />
+        <Route path="/*" element={<PageNF/>}/>
       </Routes>
     </>
   );

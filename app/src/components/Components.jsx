@@ -7,3 +7,5 @@ export {default as Logout} from './Logout';
 export {default as Games} from './Games';
 export {default as Profile} from './Profile'
 export {default as Todo} from './Todo'
+export {default as AppCard} from './appCard'
+export {default as PageNF} from './PageNF'
