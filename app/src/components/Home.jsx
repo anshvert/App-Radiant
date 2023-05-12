@@ -1,5 +1,4 @@
 import '../css/home.css'
-import {Todo} from "./Components";
 function Home(){
   const apikey = "18e733c9797e433a84fc6c003f73dece"
     return (

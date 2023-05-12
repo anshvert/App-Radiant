@@ -47,14 +47,12 @@ function Apps() {
         <ul>
           <li
             className={activeCategory === "daily" ? "active" : ""}
-            onClick={() => handleCategoryClick("daily")}
-          >
+            onClick={() => handleCategoryClick("daily")}>
             Daily Apps
           </li>
           <li
             className={activeCategory === "games" ? "active" : ""}
-            onClick={() => handleCategoryClick("games")}
-          >
+            onClick={() => handleCategoryClick("games")}>
             Games
           </li>
         </ul>

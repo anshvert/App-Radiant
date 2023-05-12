@@ -24,7 +24,7 @@ function NavBar(props) {
                         </Nav>
                         <Nav className="ml-auto">
                             <>
-                                <img src={appConstants.DEFAULT_USER_ICON} alt="XD" className="user-icon" />
+                                <img src={user?.icon ?? appConstants.DEFAULT_USER_ICON} alt="XD" className="user-icon" />
                                 <NavDropdown title={user?.name}>
                                     <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
                                     <NavDropdown.Item href="/logout">LogOut</NavDropdown.Item>

@@ -1,29 +1,28 @@
-import { ListGroup } from 'react-bootstrap';
+import React from 'react';
+import '../css/profileOptions.css';
 
 function ProfileOptions(props) {
   const { selectedOption, handleOptionChange } = props;
 
   return (
-    <ListGroup>
-      <ListGroup.Item
-        active={selectedOption === 'profile'}
-        onClick={() => handleOptionChange('profile')}
-      >
-        Profile
-      </ListGroup.Item>
-      <ListGroup.Item
-        active={selectedOption === 'settings'}
-        onClick={() => handleOptionChange('settings')}
-      >
-        Settings
-      </ListGroup.Item>
-      <ListGroup.Item
-        active={selectedOption === 'permissions'}
-        onClick={() => handleOptionChange('permissions')}
-      >
-        Permissions
-      </ListGroup.Item>
-    </ListGroup>
+    <div>
+      <ul className="list-group">
+        <li
+          className={`list-group-item px-3 mb-2 rounded-3 ${
+            selectedOption === 'profile' ? 'active' : ''
+          }`}
+          onClick={() => handleOptionChange('profile')}>
+          Profile
+        </li>
+        <li
+          className={`list-group-item px-3 mb-2 rounded-3 ${
+            selectedOption === 'settings' ? 'active' : ''
+          }`}
+          onClick={() => handleOptionChange('settings')}>
+          Settings
+        </li>
+      </ul>
+    </div>
   );
 }
 

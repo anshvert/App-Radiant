@@ -14,11 +14,10 @@ function Profile(props) {
   return (
     <Container className="mt-3">
       <Row>
-        <Col md={3} >
+        <Col md={3} color="dark">
           <ProfileOptions
             selectedOption={selectedOption}
-            handleOptionChange={handleOptionChange}
-          />
+            handleOptionChange={handleOptionChange} />
         </Col>
         <Col md={9}>
           <ProfileDetails selectedOption={selectedOption} user={user} />
