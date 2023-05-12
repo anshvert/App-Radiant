@@ -1,4 +1,4 @@
 export const urls = {
-    baseUrl:'https://zany-gold-bat-cap.cyclic.app/',
+    baseUrl:'https://good-jade-firefly-vest.cyclic.app/',
   };
   
