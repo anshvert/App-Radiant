@@ -6,6 +6,7 @@ const appConstants = require('../constants/appConstants')
 
 function NavBar(props) {
   const {isLoggedIn,user} = props
+  console.log(user)
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
@@ -24,8 +25,8 @@ function NavBar(props) {
             </Nav>
             <Nav className="ml-auto">
               <>
-                <img src={user?.icon ?? appConstants.DEFAULT_USER_ICON} alt="XD" className="user-icon" />
-                <NavDropdown title={user?.name}>
+                <img src={user?.profileImage ?? appConstants.DEFAULT_USER_ICON} alt="XD" className="user-icon" />
+                <NavDropdown title={user?.name} variant="dark" bg="dark">
                   <LinkContainer to="/profile">
                     <NavDropdown.Item>Profile</NavDropdown.Item>
                   </LinkContainer>

@@ -42,12 +42,7 @@ function Login(props) {
         const user = data.data[0]
         if (!Object.prototype.hasOwnProperty.call(user,'profileImage')){
           const profImage = localStorage.getItem("user-prof")
-          if (profImage){
-            user.icon = profImage
-          }
-          else {
-            user.icon = appConstants.DEFAULT_USER_ICON
-          }
+          user.profileImage = profImage ?? appConstants.DEFAULT_USER_ICON
         }
         props.handleLogin(user);
     }

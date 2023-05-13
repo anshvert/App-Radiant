@@ -12,7 +12,8 @@ function ProfileDetails(props) {
   },[image])
   const updateUserProfilePic = async (img)=>{
     localStorage.setItem("user-prof",img)
-    console.log(user)
+    user.profileImage = img
+    localStorage.setItem("userData",JSON.stringify({user}))
   }
   const handleUploadClick = () => {
     inputRef.current.click();
