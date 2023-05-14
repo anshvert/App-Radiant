@@ -231,6 +231,7 @@
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 40px;
+    color: white;
 }
 
 .home section h3.section-subheading {
@@ -251,6 +252,7 @@
 .home .service-heading {
     margin: 15px 0;
     text-transform: none;
+    color: white;
 }
 
 .home #portfolio .portfolio-item {
@@ -264,13 +266,17 @@
     margin: 0 auto;
     max-width: 400px;
 }
+img.img-responsive {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
 
 .home #portfolio .portfolio-item .portfolio-link .portfolio-hover {
     position: absolute;
     width: 100%;
     height: 100%;
     opacity: 0;
-    background: #1ee2e7;
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
@@ -388,15 +394,22 @@
 .home .timeline>li .timeline-image {
     z-index: 100;
     position: absolute;
-    left: 0;
-    width: 80px;
-    height: 80px;
+    width: auto;
+    height: auto;
     margin-left: 0;
     border: 7px solid #f1f1f1;
-    border-radius: 100%;
+    border-radius: 50%;
     text-align: center;
     color: #fff;
     background-color: #1ee2e7;
+    overflow: hidden;
+}
+
+.home .timeline>li .timeline-image .img-circle {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .home .timeline>li .timeline-image h4 {
@@ -431,16 +444,18 @@
 
 .home .timeline .timeline-heading h4 {
     margin-top: 0;
-    color: inherit;
+    color: white;
 }
 
 .home .timeline .timeline-heading h4.subheading {
     text-transform: none;
+    color: white;
 }
 
 .home .timeline .timeline-body>p,
 .home .timeline .timeline-body>ul {
     margin-bottom: 0;
+    color: wheat !important;
 }
 
 

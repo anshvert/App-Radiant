@@ -6,7 +6,6 @@ const appConstants = require('../constants/appConstants')
 
 function NavBar(props) {
   const {isLoggedIn,user} = props
-  console.log(user)
   return (
     <Navbar bg="dark" variant="dark">
       <Container>

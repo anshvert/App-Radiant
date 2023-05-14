@@ -11,7 +11,9 @@ function ProfileDetails(props) {
     setImage(localStorage.getItem("user-prof")??"")
   },[image])
   const updateUserProfilePic = async (img)=>{
+    localStorage.removeItem('user-prof')
     localStorage.setItem("user-prof",img)
+    localStorage.removeItem('userData')
     user.profileImage = img
     localStorage.setItem("userData",JSON.stringify({user}))
   }
