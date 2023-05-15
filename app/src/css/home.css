@@ -588,7 +588,14 @@ img.img-responsive {
 
 .home .team-member img {
     margin: 0 auto;
-    border: 7px solid #fff;
+    border: 7px solid #efebeb;
+}
+
+.home .team-member .img-circle {
+    border-radius: 50%;
+    width: 50%;
+    height: 500%;
+    object-fit: cover;
 }
 
 .home .team-member h4 {
@@ -687,30 +694,47 @@ img.img-responsive {
     line-height: 40px;
 }
 
-.home ul.social-buttons {
-    margin-bottom: 0;
+.home .team-member h4 {
+    color: white;
 }
 
-.home ul.social-buttons li a {
+.home .team-member .text-muted {
+    color:lightseagreen !important;
+}
+
+.home .team-member ul {
+    list-style-type: none;
+    margin-left: 110px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.home .team-member ul li {
+    float: left;
+    margin-right: 20px;
+}
+
+.home .team-member ul li:last-child {
+    margin-right: 0;
+}
+
+.home .team-member ul li a {
     display: block;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    font-size: 20px;
-    line-height: 40px;
-    outline: 0;
-    color: #fff;
-    background-color: #222;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    transition: all .3s;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
 }
 
-.home ul.social-buttons li a:hover,
-.home ul.social-buttons li a:focus,
-.home ul.social-buttons li a:active {
-    background-color: #1ee2e7;
+.home .team-member ul li a:hover {
+    transform: scale(1.2);
 }
+
+/*.home ul.social-buttons li a:hover,*/
+/*.home ul.social-buttons li a:focus,*/
+/*.home ul.social-buttons li a:active {*/
+/*    background-color: #1ee2e7;*/
+/*}*/
 
 .home .btn:focus,
 .home .btn:active,

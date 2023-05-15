@@ -1,4 +1,8 @@
 import '../css/home.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter, faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
 function Home(){
     return (
         <div className="home">
@@ -123,7 +127,7 @@ function Home(){
                     </li>
                     <li className="timeline-inverted">
                       <div className="timeline-image">
-                        <img className="img-circle img-responsive" src="img/about/2.jpg" alt=""/>
+                        <img className="img-circle" src="https://github.com/ansh-sde0/App-Radiant/assets/122429570/65bf16b6-d654-4f20-afbf-1caefeb7311a" alt=""/>
                       </div>
                       <div className="timeline-panel">
                         <div className="timeline-heading">
@@ -131,49 +135,10 @@ function Home(){
                           <h4 className="subheading">Mylo</h4>
                         </div>
                         <div className="timeline-body">
-                          <p className="text-muted">Backend Intern</p>
+                          <p className="text-muted">SDE Backend Intern</p>
                         </div>
                       </div>
                     </li>
-                    {/*<li>*/}
-                    {/*  <div className="timeline-image">*/}
-                    {/*    <img className="img-circle img-responsive" src="img/about/3.jpg" alt=""/>*/}
-                    {/*  </div>*/}
-                    {/*  <div className="timeline-panel">*/}
-                    {/*    <div className="timeline-heading">*/}
-                    {/*      <h4>December 2012</h4>*/}
-                    {/*      <h4 className="subheading">Transition to Full Service</h4>*/}
-                    {/*    </div>*/}
-                    {/*    <div className="timeline-body">*/}
-                    {/*      <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut*/}
-                    {/*        voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero*/}
-                    {/*        unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>*/}
-                    {/*    </div>*/}
-                    {/*  </div>*/}
-                    {/*</li>*/}
-                    {/*<li className="timeline-inverted">*/}
-                    {/*  <div className="timeline-image">*/}
-                    {/*    <img className="img-circle img-responsive" src="img/about/4.jpg" alt=""/>*/}
-                    {/*  </div>*/}
-                    {/*  <div className="timeline-panel">*/}
-                    {/*    <div className="timeline-heading">*/}
-                    {/*      <h4>July 2014</h4>*/}
-                    {/*      <h4 className="subheading">Phase Two Expansion</h4>*/}
-                    {/*    </div>*/}
-                    {/*    <div className="timeline-body">*/}
-                    {/*      <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut*/}
-                    {/*        voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero*/}
-                    {/*        unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>*/}
-                    {/*    </div>*/}
-                    {/*  </div>*/}
-                    {/*</li>*/}
-                    {/*<li className="timeline-inverted">*/}
-                    {/*  <div className="timeline-image">*/}
-                    {/*    <h4>Be Part*/}
-                    {/*      Of Our*/}
-                    {/*        Story!</h4>*/}
-                    {/*  </div>*/}
-                    {/*</li>*/}
                   </ul>
                 </div>
               </div>
@@ -184,54 +149,38 @@ function Home(){
               <div className="row">
                 <div className="col-lg-12 text-center">
                   <h2 className="section-heading">Our Amazing Team</h2>
-                  <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                  <h3 className="section-subheading text-muted"></h3>
                 </div>
               </div>
               <div className="row">
                 <div className="col-sm-4">
                   <div className="team-member">
-                    <img src="http://www.mycatspace.com/wp-content/uploads/2013/08/adopting-a-cat.jpg"
-                         className="img-responsive img-circle" alt=""/>
-                      <h4>Ansh</h4>
+                    <img src="https://github.com/ansh-sde0/App-Radiant/assets/122429570/d5f27b20-3aeb-4caf-aa02-58d47af5a842"
+                         className="img-circle" alt=""/>
+                      <h4>Ansh Tyagi</h4>
                       <p className="text-muted">Lead Designer</p>
-                      <ul className="list-inline social-buttons">
-                        <li><a href="#"><i className="fa fa-twitter"></i></a>
+                      <ul className="social-buttons">
+                        <li><a href="#"><i><FontAwesomeIcon icon={faTwitter} style={{color: "#93a1b8",}} /></i></a>
                         </li>
-                        <li><a href="#"><i className="fa fa-facebook"></i></a>
+                        <li><a href="#"><i><FontAwesomeIcon icon={faFacebookSquare} /></i></a>
                         </li>
-                        <li><a href="#"><i className="fa fa-linkedin"></i></a>
-                        </li>
-                      </ul>
-                  </div>
-                </div>
-                <div className="col-sm-4">
-                  <div className="team-member">
-                    <img src="https://www.mycatspace.com/wp-content/uploads/2013/08/adopting-a-cat.jpg"
-                         className="img-responsive img-circle" alt=""/>
-                      <h4>Ansh</h4>
-                      <p className="text-muted">Lead Marketer</p>
-                      <ul className="list-inline social-buttons">
-                        <li><a href="#"><i className="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i className="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i className="fa fa-linkedin"></i></a>
+                        <li><a href="#"><i><FontAwesomeIcon icon={faEnvelope} style={{color: "#da6c6c",}} /></i></a>
                         </li>
                       </ul>
                   </div>
                 </div>
                 <div className="col-sm-4">
                   <div className="team-member">
-                    <img src="http://www.mycatspace.com/wp-content/uploads/2013/08/adopting-a-cat.jpg"
-                         className="img-responsive img-circle" alt=""/>
-                      <h4>Ansh</h4>
+                    <img src="https://github.com/ansh-sde0/App-Radiant/assets/122429570/d5f27b20-3aeb-4caf-aa02-58d47af5a842"
+                         className="img-circle" alt=""/>
+                      <h4>Ansh Tyagi</h4>
                       <p className="text-muted">Lead Developer</p>
-                      <ul className="list-inline social-buttons">
-                        <li><a href="#"><i className="fa fa-twitter"></i></a>
+                      <ul className="social-buttons">
+                        <li><a href="#"><i><FontAwesomeIcon icon={faTwitter} style={{color: "#93a1b8",}} /></i></a>
                         </li>
-                        <li><a href="#"><i className="fa fa-facebook"></i></a>
+                        <li><a href="#"><i><FontAwesomeIcon icon={faFacebookSquare} /></i></a>
                         </li>
-                        <li><a href="#"><i className="fa fa-linkedin"></i></a>
+                        <li><a href="#"><i><FontAwesomeIcon icon={faEnvelope} style={{color: "#da6c6c",}} /></i></a>
                         </li>
                       </ul>
                   </div>
@@ -239,8 +188,7 @@ function Home(){
               </div>
               <div className="row">
                 <div className="col-lg-8 col-lg-offset-2 text-center">
-                  <p className="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
-                    laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                  <p className="large text-muted"></p>
                 </div>
               </div>
             </div>
@@ -530,20 +478,6 @@ function Home(){
               </div>
             </div>
           </div>
-          <script
-            src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/jquery-1.11.0.js"></script>
-          <script
-            src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/bootstrap.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-          <script
-            src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/classie.js"></script>
-          <script
-            src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/cbpAnimatedHeader.js"></script>
-          <script
-            src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/jqBootstrapValidation.js"></script>
-          <script
-            src="https://raw.githubusercontent.com/IronSummitMedia/startbootstrap/gh-pages/templates/agency/js/contact_me.js"></script>
-
           <span
             style={{
               height: "20px",
@@ -556,7 +490,7 @@ function Home(){
               display: "none",
               cursor: "pointer",
               backgroundImage: "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAUCAYAAAD/Rn+7AAADU0lEQVR42s2WXUhTYRjHz0VEVPRFUGmtVEaFUZFhHxBhsotCU5JwBWEf1EWEEVHQx4UfFWYkFa2biPJiXbUta33OXFtuUXMzJ4bK3Nqay7m5NeZq6h/tPQ+xU20zugjOxR/+7/O8539+5znnwMtNTExwJtMb3L/fiLv3botCSmUjeCaejTOb39AiFothfHxcFIrHY8RksZjBsckJcOIRMfFsHD/SsbExUYpnI8DR0dGUGjSb0byhEJp5Uqg5CTSzc2CQleJbMEj9/ywBcGRkJEk9DQqouEVQT1sK444yWI9UonmTjGqauVLEIlHa9x8lAMbj8SSpp0rwKGMVvg8P46vbg0C7na8z8JsMcgHe7jlEa+edRhiLy8n/TUMfu6EvLElk+U0WtGwrTrdfAGQf5J8iiK4LVzDU28t8JtMSocf8E+l68myaNFXm/6rXslLK7ay5TOunuRvZWpJuvwAYjUaTpOIWoquuAZ219RTaxKYp9BbjycoN5FvL9qH9TBX5rvoGdJythvXYSTxdtRnWylO/ZdqrLsGwszzhWQ593z2KlAwCYCQSSZJ6ehZ0W7bD9VBLgN0NCqr3qR7R2rBrL3pu3Sb/7nDlz2uy6cG0OXk0GTbZXzNp8trsPAQdTj6frlWzN2DcXZGKQQAMh8NJ6rpyHe+PnkCr/CAFdZyvpfpjuvkifLF9wIt1Wwlo0OHie1RvWrKa93RjzfzliTzPKz3ltB0/Tevmwp14wGUgHAzSOoUEwFAolFaaBSuhnslPRkJexUJtZ6v5HtUeLswl33n1BgEY5fvhs9sJ3FAiT+QYyyvoAQJuD0KBAFRTJNAuz5/s3gJgMBhMJwrVFRThM5tY5zUF/A4X1f2fvQTRLCuBreoim0YmAbqNJryvPEXeeq46kaNdkQ/1HCncbJKPs9ZSv2VHGfWsZ2hfkhKAfr8/pdxWKx4wwD69PmVfNSOL+lr2w+gYqHpWDtXt1xQ8AMlWU0e1lqLd/APRHoP8AJqWrQG9gYxcPMsvSJUvAA4MDKTUJ7MZLaVy8v+qT21tcDx/OemePr0RTkNrur4A6PP5xCgBsL+/X4wiQDpuuVxOeL1eMYmYeDY6sOp0z+B0OuHxeEQhxkJMFosJiSO/UinOI/8Pc+l7KKArAT8AAAAASUVORK5CYII=)"}}>
-                </span>
+          </span>
         </div>
     )
 }
