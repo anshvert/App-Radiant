@@ -1,6 +1,7 @@
 import { Card, Container, Row, Col, Dropdown } from "react-bootstrap";
 import '../css/profileDetails.css'
 import { useEffect, useRef, useState } from "react";
+import React from "react";
 function ProfileDetails(props) {
   const {selectedOption,user} = props
   const [image, setImage] = useState(null);
@@ -8,7 +9,7 @@ function ProfileDetails(props) {
   let detailsComponent = null;
 
   useEffect(()=>{
-    setImage(localStorage.getItem("user-prof")??"")
+    setImage(localStorage.getItem("user-prof"))
   },[image])
   const updateUserProfilePic = async (img)=>{
     localStorage.removeItem('user-prof')
@@ -84,7 +85,7 @@ function ProfileDetails(props) {
   }
 
   return (
-    <Card bg="dark" variant="dark">
+    <Card bg="dark">
       <Card.Body>{detailsComponent}</Card.Body>
     </Card>
   );

@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/navbar.css'
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import React from 'react';
 const appConstants = require('../constants/appConstants')
 
 function NavBar(props) {
@@ -25,7 +26,7 @@ function NavBar(props) {
             <Nav className="ml-auto">
               <>
                 <img src={user?.profileImage ?? appConstants.DEFAULT_USER_ICON} alt="XD" className="user-icon" />
-                <NavDropdown title={user?.name} variant="dark" bg="dark">
+                <NavDropdown title={user?.name}>
                   <LinkContainer to="/profile">
                     <NavDropdown.Item>Profile</NavDropdown.Item>
                   </LinkContainer>
