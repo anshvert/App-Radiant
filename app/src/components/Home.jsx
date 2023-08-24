@@ -149,7 +149,6 @@ function Home(){
               <div className="row">
                 <div className="col-lg-12 text-center">
                   <h2 className="section-heading">Our Amazing Team</h2>
-                  <h3 className="section-subheading text-muted"></h3>
                 </div>
               </div>
               <div className="row">
@@ -160,11 +159,11 @@ function Home(){
                       <h4>Ansh Tyagi</h4>
                       <p className="text-muted">Lead Designer</p>
                       <ul className="social-buttons">
-                        <li><a href="#"><i><FontAwesomeIcon icon={faTwitter} style={{color: "#93a1b8",}} /></i></a>
+                        <li><a href="/#"><i><FontAwesomeIcon icon={faTwitter} style={{color: "#93a1b8",}} /></i></a>
                         </li>
-                        <li><a href="#"><i><FontAwesomeIcon icon={faFacebookSquare} /></i></a>
+                        <li><a href="/#"><i><FontAwesomeIcon icon={faFacebookSquare} /></i></a>
                         </li>
-                        <li><a href="#"><i><FontAwesomeIcon icon={faEnvelope} style={{color: "#da6c6c",}} /></i></a>
+                        <li><a href="/#"><i><FontAwesomeIcon icon={faEnvelope} style={{color: "#da6c6c",}} /></i></a>
                         </li>
                       </ul>
                   </div>
@@ -176,11 +175,11 @@ function Home(){
                       <h4>Ansh Tyagi</h4>
                       <p className="text-muted">Lead Developer</p>
                       <ul className="social-buttons">
-                        <li><a href="#"><i><FontAwesomeIcon icon={faTwitter} style={{color: "#93a1b8",}} /></i></a>
+                        <li><a href="/#"><i><FontAwesomeIcon icon={faTwitter} style={{color: "#93a1b8",}} /></i></a>
                         </li>
-                        <li><a href="#"><i><FontAwesomeIcon icon={faFacebookSquare} /></i></a>
+                        <li><a href="/#"><i><FontAwesomeIcon icon={faFacebookSquare} /></i></a>
                         </li>
-                        <li><a href="#"><i><FontAwesomeIcon icon={faEnvelope} style={{color: "#da6c6c",}} /></i></a>
+                        <li><a href="/#"><i><FontAwesomeIcon icon={faEnvelope} style={{color: "#da6c6c",}} /></i></a>
                         </li>
                       </ul>
                   </div>
@@ -248,19 +247,19 @@ function Home(){
                 </div>
                 <div className="col-md-4">
                   <ul className="list-inline social-buttons">
-                    <li><a href="#"><i className="fa fa-twitter"></i></a>
+                    <li><a href="/#"><i className="fa fa-twitter"></i></a>
                     </li>
-                    <li><a href="#"><i className="fa fa-facebook"></i></a>
+                    <li><a href="/#"><i className="fa fa-facebook"></i></a>
                     </li>
-                    <li><a href="#"><i className="fa fa-linkedin"></i></a>
+                    <li><a href="/#"><i className="fa fa-linkedin"></i></a>
                     </li>
                   </ul>
                 </div>
                 <div className="col-md-4">
                   <ul className="list-inline quicklinks">
-                    <li><a href="#">Privacy Policy</a>
+                    <li><a href="/#">Privacy Policy</a>
                     </li>
-                    <li><a href="#">Terms of Use</a>
+                    <li><a href="/#">Terms of Use</a>
                     </li>
                   </ul>
                 </div>

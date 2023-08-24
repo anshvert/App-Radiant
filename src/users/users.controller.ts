@@ -5,7 +5,6 @@ import { UserDTO } from './dto/users.dto';
 @Controller('users')
 export class UserController{
     constructor(private readonly userservice: UserService) {}
-
     @Get()
     async getUsers(@Res() res){
 
@@ -38,4 +37,6 @@ export class UserController{
         res.status(200).send(response)
 
     }
+    @Post('addPic')
+    async addProfilePic(@Req() req,@Res() res,@Body() body) {}
 }
